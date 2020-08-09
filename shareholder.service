@@ -1,0 +1,14 @@
+[Unit]
+Description=Shareholder service
+After=network.target
+
+[Service]
+User=ox
+Group=www-data
+WorkingDirectory=/srv/ox/shareholder
+EnvironmentFile=/srv/ox/shareholder/.env
+ExecStart=/srv/ox/shareholder/physicalshare
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
