@@ -1,4 +1,4 @@
-# physicalshare
+# sharheolder
 
 Simple web service to update our Shareholders email and mobile numbers.
 
