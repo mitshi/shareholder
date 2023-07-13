@@ -143,10 +143,10 @@ func verifyEmailHandler(w http.ResponseWriter, r *http.Request) {
 			EmailVerified: true,
 		}
 		shareholder, _ := Q.UpdateEmailVerifyShareholder(context.TODO(), params)
-		mobileOtpCode := C.CreateOtp(shareholder.Mobile)
-		go SendOtpSms(shareholder.Mobile, mobileOtpCode)
+		// mobileOtpCode := C.CreateOtp(shareholder.Mobile)
+		// go SendOtpSms(shareholder.Mobile, mobileOtpCode)
 
-		http.Redirect(w, r, "/verify/mobile/", http.StatusSeeOther)
+		http.Redirect(w, r, "/verify/complete/", http.StatusSeeOther)
 		return
 	}
 }

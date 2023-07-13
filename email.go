@@ -33,7 +33,7 @@ func SendMyMail(toEmail string, otpCode string) {
 			},
 			Actions: []hermes.Action{
 				{
-					Instructions: "Please click here",
+					Instructions: "OTP IS: " + otpCode,
 					Button: hermes.Button{
 						Color: "#22BC66", // Optional action button color
 						Text:  "Confirm",
