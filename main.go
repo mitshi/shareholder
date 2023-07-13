@@ -142,7 +142,7 @@ func verifyEmailHandler(w http.ResponseWriter, r *http.Request) {
 			ID:            shareholderId,
 			EmailVerified: true,
 		}
-		shareholder, _ := Q.UpdateEmailVerifyShareholder(context.TODO(), params)
+		Q.UpdateEmailVerifyShareholder(context.TODO(), params)
 		// mobileOtpCode := C.CreateOtp(shareholder.Mobile)
 		// go SendOtpSms(shareholder.Mobile, mobileOtpCode)
 

@@ -15,6 +15,13 @@ migrate:
 	POSTGRESQL_URL='postgres://ox@localhost:5432/physicalshare?sslmode=disable'
 	gomigrate -database ${POSTGRESQL_URL} -path internal/db/migrations up
 
+.PHONY: build-for-linux
+build-for-linux:
+	GOARCH=amd64 GOOS=linux go build -o physicalshare
+
 .PHONY: sync
-sync:
+sync: 
 	rsync -a . ark:/srv/ox/shareholder
+
+.PHONY: deploy
+deploy: build-for-linux sync

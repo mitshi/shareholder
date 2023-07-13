@@ -18,4 +18,6 @@ export $(cat .env | xargs) go run *.go
 
 ## Deploy
 
-TODO
+```
+make deploy
+```
